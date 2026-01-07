@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Shop Flower{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'shop_flower/css/style.css' %}">
+</head>
+
+<body>
+<!-- Top Bar -->
+<div class="bg-light py-1">
+  <div class="container d-flex justify-content-between small text-muted">
+    <div>
+      Miễn phí vận chuyển với đơn hàng trên 1.000k
+    </div>
+    <div>
+      <a href="#" class="text-decoration-none text-muted me-3">Đăng nhập</a>
+      <a href="#" class="text-decoration-none text-muted">Đăng ký</a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar chính -->
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container py-2">
+    <a class="navbar-brand" href="/">
+      <div class="logo-box">
+        <span class="logo-text d-block fs-4 fw-bold">HanaSweet</span>
+      </div>
+    </a>
+
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <div class="mx-auto search-wrapper">
+        <form class="d-flex search-group">
+          <input class="form-control form-control-sm" type="search" placeholder="Tìm kiếm sản phẩm...">
+          <button class="btn btn-search-sm" type="submit">🔍</button>
+        </form>
+
+        <!--<div class="header-features d-none d-lg-flex">
+            <span>🛡️ Chất lượng</span>
+            <span>🚚 Free ship</span>
+            <span>✅ Kiểm hàng</span>
+        </div>-->
+      </div>
+
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item me-3">
+          <a class="nav-link text-white d-flex align-items-center" href="#">
+            <span class="me-1 small-icon"><i class="fi fi-ts-user"></i></span>
+            <span class="auth-text">Đăng nhập / Đăng ký</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/cart/" class="btn-cart position-relative">
+            <span class="small-icon">🛍️</span>
+            <span class="cart-badge">0</span>
+            <span class="ms-4 text-white d-none d-md-inline small">Giỏ hàng</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="main-menu-bar d-none d-lg-block">
+    <div class="container">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link text-white" href="/">Trang chủ</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="/products/">Sản phẩm</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Tin tức</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Main content -->
+<div class="container my-4">
+  {% block content %}
+  {% endblock %}
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h6>Thông tin</h6>
+        <ul class="list-unstyled">
+          <li><a class="text-light text-decoration-none" href="#">Về chúng tôi</a></li>
+          <li><a class="text-light text-decoration-none" href="#">Điều khoản</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6>Hỗ trợ</h6>
+        <ul class="list-unstyled">
+          <li><a class="text-light text-decoration-none" href="#">Liên hệ</a></li>
+          <li><a class="text-light text-decoration-none" href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-end">
+        &copy; 2026 Shop Flower
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
