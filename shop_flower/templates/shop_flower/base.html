@@ -27,7 +27,7 @@
       <div class="container py-2">
         <a class="navbar-brand" href="/">
           <div class="logo-box">
-            <span class="logo-text d-block fs-4 fw-bold">HolaFlower</span>
+            <span class="logo-text d-block fs-4 fw-bold">CozySHOP</span>
           </div>
         </a>
 
@@ -52,8 +52,7 @@
           <ul class="navbar-nav ms-auto align-items-center">
             <li class="nav-item me-3">
               <a class="nav-link text-white d-flex align-items-center" href="#">
-                <span class="me-1 small-icon"><i class="fi fi-ts-user"></i></span>
-                <span class="auth-text">Đăng nhập / Đăng ký</span>
+                <h5 class="fw-bold text-danger">Hotline: 0936033374</h5>
               </a>
             </li>
 
@@ -69,15 +68,105 @@
     </nav>
 
     <div class="main-menu-bar d-none d-lg-block">
-        <div class="container">
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link text-white" href="/">Trang chủ</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="/products/">Sản phẩm</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#">Tin tức</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#">Liên hệ</a></li>
-            </ul>
-        </div>
+    <div class="container">
+
+        <ul class="nav main-category-menu justify-content-center flex-wrap">
+
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" href="/">
+                    🏠 Trang chủ
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=1">
+                    💐 Bó hoa
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=2">
+                    🎂 Hoa sinh nhật
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=3">
+                    👑 Hoa sang trọng
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=4">
+                    🧺 Giỏ hoa
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=5">
+                    🎁 Hộp hoa
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=6">
+                    👰 Hoa cưới
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=7">
+                    🎉 Hoa chúc mừng
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=8">
+                    🕊 Hoa chia buồn
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=9">
+                    🎓 Hoa tốt nghiệp
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=10">
+                    🌸 Lan hồ điệp
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=11">
+                    🌹 Hoa hồng
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=12">
+                    🌼 Hoa cẩm chướng
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=13">
+                    🌻 Hoa hướng dương
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white category-link" href="/products/?type=14">
+                    💜 Hoa lavender
+                </a>
+            </li>
+
+        </ul>
+
     </div>
+</div>
+
   </div>
 
 
@@ -241,6 +330,8 @@ const csrftoken = getCookie('csrftoken');
 <script src="{% static 'shop_flower/js/home.js' %}"></script>
 <script src="{% static 'shop_flower/js/base.js' %}"></script>
 <script src="{% static 'shop_flower/js/cart.js' %}"></script>
+<script src="{% static 'shop_flower/js/discount.js' %}"></script>
+
 
 </body>
 </html>

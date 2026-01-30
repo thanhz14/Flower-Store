@@ -95,7 +95,7 @@
             {% for item in flower.category.flower_set.all|slice:":4" %}
                 {% if item.id != flower.id %}
                 <div class="col-md-3">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card h-100 shadow-sm flower-card">
                         <img 
                             src="{{ item.image.url }}" 
                             class="card-img-top"
