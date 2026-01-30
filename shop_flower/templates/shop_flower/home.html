@@ -1,0 +1,105 @@
+{% extends 'shop_flower/base.html' %}
+{% load humanize %}
+{% load static %}
+
+{% block title %}Trang chủ - Shop Flower{% endblock %}
+
+{% block content %}
+
+<!-- Carousel quảng cáo -->
+<div id="flowerCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#flowerCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#flowerCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#flowerCarousel" data-bs-slide-to="2"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'shop_flower/banners/banner_s_1.jpg' %}" class="d-block w-100" alt="Hoa tươi mỗi ngày">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Hoa tươi mỗi ngày</h5>
+        <p>Giao nhanh – Đúng hẹn</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'shop_flower/banners/banner_s_2.jpg' %}" class="d-block w-100" alt="Quà tặng ý nghĩa">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Quà tặng ý nghĩa</h5>
+        <p>Cho người bạn yêu thương</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <img src="{% static 'shop_flower/banners/banner_s_4.jpg' %}" class="d-block w-100" alt="Vận chuyển hỏa tốc">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Vận chuyển nhanh chóng</h5>
+        <p>Trung tâm Hà Nội</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#flowerCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#flowerCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<div class="text-center my-5">
+  <h1>Chào mừng đến Shop Flower</h1>
+  <p>Thương hiệu hoa & quà tặng</p>
+  <!-- Bạn có thể thêm banner, carousel ở đây -->
+</div>
+
+<!-- List hoa -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">🌸 Hoa đang bán</h2>
+  <div class="row">
+  {% for flower in flowers %}
+  <div class="col-md-3 mb-4">
+    <div class="card h-100 shadow-sm
+    {% if flower.stock == 0 %} opacity-50 {% endif %}">
+
+      {% if flower.image %}
+      <a href="{% url 'product_detail' flower.id %}">
+        <img src="{{ flower.image.url }}" class="card-img-top" alt="{{ flower.name }}">
+      </a>
+      {% else %}
+      <img src="{% static 'shop_flower/images/no-image.png' %}" class="card-img-top">
+      {% endif %}
+
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ flower.name }}</h5>
+
+        {% if flower.stock > 0 %}
+            <p class="text-danger fw-bold">
+                {{ flower.sell_price|floatformat:0|intcomma }} VND
+            </p>
+        {% else %}
+            <p class="text-muted fw-bold">
+                HẾT HÀNG
+            </p>
+        {% endif %}
+
+        <div class="cart-action"
+          data-id="{{ flower.id }}"
+          data-name="{{ flower.name }}"
+          data-price="{{ flower.sell_price }}"
+          data-image="{{ flower.image.url }}">
+          <button class="btn btn-danger rounded-pill fw-bold w-100 btn-add-cart">
+             🛒 Thêm vào giỏ
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
+
