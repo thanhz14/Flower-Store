@@ -475,3 +475,260 @@ body {
     overflow: visible;
 }
 
+.old-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 4px;
+}
+
+.new-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e53935;
+}
+
+.cozy-intro {
+    background: #fff5f7;
+}
+
+.cozy-intro h2 {
+    color: #e91e63;
+    font-weight: 700;
+}
+
+.cozy-intro .intro-text {
+    max-width: 800px;
+    margin: 0 auto 16px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.site-footer {
+    background: #ffffff;
+    border-top: 1px solid #f1cfd8;
+    padding: 40px 0;
+}
+
+.footer-logo {
+    color: #e91e63;
+    font-weight: 700;
+}
+
+.footer-slogan {
+    font-style: italic;
+    color: #999;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 8px;
+}
+
+.footer-menu a {
+    color: #444;
+    text-decoration: none;
+}
+
+.footer-menu a:hover {
+    color: #e91e63;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 6px;
+    font-size: 20px;
+    color: #e91e63;
+}
+
+.footer-dropdown {
+    position: relative;
+}
+
+.footer-dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 220px;
+
+    background: #fff;
+    border: 1px solid #f1cfd8;
+    border-radius: 6px;
+    padding: 8px 0;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: all 0.25s ease;
+
+    z-index: 20;
+}
+
+.footer-dropdown:hover .footer-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.footer-dropdown-menu li {
+    list-style: none;
+}
+
+.footer-dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #444;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-dropdown-menu a:hover {
+    background: #fff5f7;
+    color: #e91e63;
+}
+
+.footer-strip {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.footer-strip::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 245, 247, 0.9);
+}
+
+.footer-strip-menu {
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 0;
+    margin: 0;
+    gap: 24px;
+}
+
+.footer-strip-menu > li {
+    position: relative;
+}
+
+.footer-strip-menu a {
+    text-decoration: none;
+    color: #e91e63;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-strip-menu i {
+    display: block;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.footer-strip-menu a:hover {
+    color: #c2185b;
+    transform: translateY(-3px);
+}
+
+/* ===== DROPDOWN ===== */
+
+.footer-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+
+    min-width: 260px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px 0;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 20;
+}
+
+.footer-dropdown:hover .footer-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.footer-dropdown-menu li {
+    list-style: none;
+}
+
+.footer-dropdown-menu a {
+    padding: 10px 18px;
+    font-size: 13px;
+    color: #444;
+    letter-spacing: 0.5px;
+}
+
+.footer-dropdown-menu a:hover {
+    background: #fff5f7;
+    color: #e91e63;
+}
+
+@media (max-width: 768px) {
+    .footer-strip-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-strip-menu > li {
+        flex: 0 0 33%;
+        margin-bottom: 20px;
+    }
+}
+
+/* SOCIAL */
+.footer-social {
+    margin-bottom: 25px;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.footer-social a:hover {
+    color: #ffd6d6;
+}
+
+/* INFO */
+.footer-info {
+    font-size: 13px;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+.footer-info h6 {
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.footer-info a {
+    color: #ffd6d6;
+    text-decoration: none;
+}

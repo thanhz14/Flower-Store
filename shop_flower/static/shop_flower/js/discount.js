@@ -15,10 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const price = parseInt(card.dataset.price);
         const stock = parseInt(card.dataset.stock);
 
-        // ❌ hết hàng không hiện
+        // ❌ hết hàng
         if (stock === 0) return;
 
-        // tìm giá gốc
+        // =====================
+        // TÌM GIÁ GỐC
+        // =====================
         let original = null;
 
         for (let base of BASE_PRICES) {
@@ -30,21 +32,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!original) return;
 
-        // % giảm
+        // =====================
+        // TÍNH % GIẢM
+        // =====================
         const percent = Math.round(
             (original - price) / original * 100
         );
 
         if (percent <= 0) return;
 
-        // badge %
+        // =====================
+        // BADGE %
+        // =====================
         const badge = document.createElement("div");
         badge.className = "discount-percent";
         badge.innerHTML = `-${percent}<span>%</span>`;
-
         card.appendChild(badge);
 
-        // 🔥 HOT cho 6 card đầu
+        // =====================
+        // GIÁ GỐC (GẠCH)
+        // =====================
+        const priceBlock = card.querySelector(".card-body .price")
+
+        if (priceBlock) {
+            priceBlock.innerHTML = `
+                <div class="old-price">
+                    ${formatMoney(original)} VND
+                </div>
+                <div class="new-price">
+                    ${formatMoney(price)} VND
+                </div>
+            `;
+        }
+
+        // =====================
+        // HOT cho 6 card đầu
+        // =====================
         if (index < 6) {
             const hot = document.createElement("div");
             hot.className = "hot-badge";
@@ -53,5 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     });
-
 });
+
+function formatMoney(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}

@@ -12,9 +12,11 @@ from django.db.models import Q
 from django.db.models import Sum
 from django.db.models.functions import Coalesce
 
-def home(request):
+from django.db.models import Sum
+from django.db.models.functions import Coalesce
 
-    flowers = (
+def home(request):
+    base_flowers = (
         Flower.objects
         .filter(is_active=True)
         .annotate(
@@ -25,8 +27,31 @@ def home(request):
         )
     )
 
+    flowers_type_1 = (
+        base_flowers
+        .filter(flower_types__id=1)   # ✔ M2M: trong list có id=1
+        .distinct()                  # ✔ tránh duplicate do JOIN
+        [:8]                          # ✔ tối đa 8
+    )
+
+    flowers_type_4 = (
+        base_flowers
+        .filter(flower_types__id=4)
+        .distinct()
+        [:8]
+    )
+
+    flowers_type_17 = (
+        base_flowers
+        .filter(flower_types__id=17)
+        .distinct()
+        [:8]
+    )
+
     return render(request, "shop_flower/home.html", {
-        "flowers": flowers
+        "flowers_type_1": flowers_type_1,
+        "flowers_type_4": flowers_type_4,
+        "flowers_type_17": flowers_type_17,
     })
 
 
@@ -347,3 +372,14 @@ def order_pending(request, order_id):
         }
     )
 
+def blog(request):
+    return render(request, "blog.html")
+
+def about(request):
+    return render(request, "about.html")
+
+def contact(request):
+    return render(request, "contact.html")
+
+def policy(request):
+    return render(request, "policy.html")

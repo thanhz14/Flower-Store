@@ -134,53 +134,137 @@
 </div>
 
 <!-- List hoa -->
-<div class="container my-5">
-  <h2 class="text-center mb-4">🌸 Hoa đang bán</h2>
+<div class="container my-5 pt-3">
+  <h2 class="text-center mb-4">💐 Bó hoa</h2>
   <div class="row">
-  {% for flower in flowers %}
-  <div class="col-md-3 mb-4">
-    <div class="card h-100 shadow-sm flower-card
-      {% if flower.stock == 0 %} opacity-50 {% endif %}"
-      data-price="{{ flower.sell_price }}"
-      data-stock="{{ flower.stock }}">
+  {% for flower in flowers_type_1 %}
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm flower-card
+          {% if flower.stock == 0 %} opacity-50 {% endif %}"
+          data-price="{{ flower.sell_price }}"
+          data-stock="{{ flower.stock }}">
 
+          {% if flower.image %}
+          <a href="{% url 'product_detail' flower.id %}">
+            <img src="{{ flower.image.url }}" class="card-img-top" alt="{{ flower.name }}">
+          </a>
+          {% else %}
+          <img src="{% static 'shop_flower/images/no-image.png' %}" class="card-img-top">
+          {% endif %}
 
-      {% if flower.image %}
-      <a href="{% url 'product_detail' flower.id %}">
-        <img src="{{ flower.image.url }}" class="card-img-top" alt="{{ flower.name }}">
-      </a>
-      {% else %}
-      <img src="{% static 'shop_flower/images/no-image.png' %}" class="card-img-top">
-      {% endif %}
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ flower.name }}</h5>
 
-      <div class="card-body text-center">
-        <h5 class="card-title">{{ flower.name }}</h5>
-
-        {% if flower.stock > 0 %}
-            <p class="text-danger fw-bold">
+            {% if flower.stock > 0 %}
+              <p class="text-danger fw-bold price">
                 {{ flower.sell_price|floatformat:0|intcomma }} VND
-            </p>
+              </p>
+            {% else %}
+              <p class="text-muted fw-bold">HẾT HÀNG</p>
+            {% endif %}
+
+            <div class="cart-action"
+              data-id="{{ flower.id }}"
+              data-name="{{ flower.name }}"
+              data-price="{{ flower.sell_price }}"
+              data-image="{{ flower.image.url }}">
+              <button class="btn btn-danger rounded-pill fw-bold w-100 btn-add-cart">
+                🛒 Thêm vào giỏ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  {% endfor %}
+  </div>
+
+  <h2 class="text-center mb-4">🌸 Giỏ hoa</h2>
+  <div class="row">
+  {% for flower in flowers_type_4 %}
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 shadow-sm flower-card
+        {% if flower.stock == 0 %} opacity-50 {% endif %}"
+        data-price="{{ flower.sell_price }}"
+        data-stock="{{ flower.stock }}">
+
+        {% if flower.image %}
+        <a href="{% url 'product_detail' flower.id %}">
+          <img src="{{ flower.image.url }}" class="card-img-top" alt="{{ flower.name }}">
+        </a>
         {% else %}
-            <p class="text-muted fw-bold">
-                HẾT HÀNG
-            </p>
+        <img src="{% static 'shop_flower/images/no-image.png' %}" class="card-img-top">
         {% endif %}
 
-        <div class="cart-action"
-          data-id="{{ flower.id }}"
-          data-name="{{ flower.name }}"
-          data-price="{{ flower.sell_price }}"
-          data-image="{{ flower.image.url }}">
-          <button class="btn btn-danger rounded-pill fw-bold w-100 btn-add-cart">
-             🛒 Thêm vào giỏ
-          </button>
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ flower.name }}</h5>
+
+          {% if flower.stock > 0 %}
+            <p class="text-danger fw-bold price">
+              {{ flower.sell_price|floatformat:0|intcomma }} VND
+            </p>
+          {% else %}
+            <p class="text-muted fw-bold">HẾT HÀNG</p>
+          {% endif %}
+
+          <div class="cart-action"
+            data-id="{{ flower.id }}"
+            data-name="{{ flower.name }}"
+            data-price="{{ flower.sell_price }}"
+            data-image="{{ flower.image.url }}">
+            <button class="btn btn-danger rounded-pill fw-bold w-100 btn-add-cart">
+              🛒 Thêm vào giỏ
+            </button>
+          </div>
         </div>
       </div>
     </div>
+  {% endfor %}
   </div>
+
+  <h2 class="text-center mb-4">🏵️ Lãng hoa</h2>
+  <div class="row">
+  {% for flower in flowers_type_17 %}
+    <div class="col-md-3 mb-4">
+      <div class="card h-100 shadow-sm flower-card
+        {% if flower.stock == 0 %} opacity-50 {% endif %}"
+        data-price="{{ flower.sell_price }}"
+        data-stock="{{ flower.stock }}">
+
+        {% if flower.image %}
+        <a href="{% url 'product_detail' flower.id %}">
+          <img src="{{ flower.image.url }}" class="card-img-top" alt="{{ flower.name }}">
+        </a>
+        {% else %}
+        <img src="{% static 'shop_flower/images/no-image.png' %}" class="card-img-top">
+        {% endif %}
+
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ flower.name }}</h5>
+
+          {% if flower.stock > 0 %}
+            <p class="text-danger fw-bold price">
+              {{ flower.sell_price|floatformat:0|intcomma }} VND
+            </p>
+          {% else %}
+            <p class="text-muted fw-bold">HẾT HÀNG</p>
+          {% endif %}
+
+          <div class="cart-action"
+            data-id="{{ flower.id }}"
+            data-name="{{ flower.name }}"
+            data-price="{{ flower.sell_price }}"
+            data-image="{{ flower.image.url }}">
+            <button class="btn btn-danger rounded-pill fw-bold w-100 btn-add-cart">
+              🛒 Thêm vào giỏ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   {% endfor %}
   </div>
 </div>
+
 
 {% endblock %}
 
