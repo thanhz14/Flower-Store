@@ -9,9 +9,6 @@ __pycache__/
 *$py.class
 
 # Django
-*.sqlite3
-db.sqlite3
-media/
 staticfiles/
 local_settings.py
 
