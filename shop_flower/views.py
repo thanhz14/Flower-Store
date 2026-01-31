@@ -373,13 +373,13 @@ def order_pending(request, order_id):
     )
 
 def blog(request):
-    return render(request, "blog.html")
+    return render(request, "shop_flower/blog.html")
 
 def about(request):
-    return render(request, "about.html")
+    return render(request, "shop_flower/about.html")
 
 def contact(request):
-    return render(request, "contact.html")
+    return render(request, "shop_flower/contact.html")
 
 def policy(request):
-    return render(request, "policy.html")
+    return render(request, "shop_flower/policy.html")

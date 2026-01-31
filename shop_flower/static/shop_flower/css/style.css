@@ -732,3 +732,119 @@ body {
     color: #ffd6d6;
     text-decoration: none;
 }
+
+/* HERO */
+.policy-hero {
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.policy-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.policy-hero h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.policy-hero p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* QUICK LINKS */
+.policy-link-card {
+    display: block;
+    padding: 25px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.policy-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+/* CONTENT */
+.policy-section {
+    margin-bottom: 70px;
+    scroll-margin-top: 120px;
+}
+
+.policy-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.policy-divider {
+    text-align: center;
+    margin: 15px 0 25px;
+    font-size: 20px;
+}
+
+/* NỀN TRANG POLICY */
+.policy-content {
+    background: #fdecef; /* hồng nhạt pastel */
+    padding: 60px 0;
+}
+
+/* KHUNG CHÍNH SÁCH */
+.policy-box {
+    background: #fff;
+    border-radius: 18px;
+    padding: 40px 45px;
+    border: 2px solid #f3b6c6; /* hồng đậm hơn nền */
+    box-shadow: 0 12px 30px rgba(243, 182, 198, 0.25);
+}
+
+/* CÁCH NHAU GIỮA CÁC KHUNG */
+.policy-box + .policy-box {
+    margin-top: 60px;
+}
+
+/* TITLE */
+.policy-box h2 {
+    color: #c7375d;
+}
+
+/* SUB TITLE */
+.policy-box h4 {
+    margin-top: 25px;
+    color: #c7375d;
+    font-weight: 600;
+}
+
+/* LIST */
+.policy-box ul {
+    padding-left: 20px;
+}
+
+.policy-box li {
+    margin-bottom: 8px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .policy-box {
+        padding: 28px 22px;
+    }
+}
+
