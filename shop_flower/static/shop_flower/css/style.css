@@ -33,7 +33,7 @@ body {
 /* khi scroll xuống → ẩn cả header */
 .header-hide .custom-navbar,
 .header-hide .main-menu-bar {
-    transform: translateY(-140px);
+    transform: translateY(-160px);
 }
 
 /* đẩy nội dung xuống */
